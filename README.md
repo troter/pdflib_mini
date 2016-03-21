@@ -1,5 +1,10 @@
 # PdflibMini
 
+[![Gem Version](https://badge.fury.io/rb/pdflib_mini.svg)](http://badge.fury.io/rb/pdflib_mini)
+[![Build Status](https://travis-ci.org/troter/pdflib_mini.svg?branch=master)](https://travis-ci.org/troter/pdflib_mini)
+[![Coverage Status](https://coveralls.io/repos/troter/pdflib_mini/badge.svg)](https://coveralls.io/r/troter/pdflib_mini)
+[![Code Climate](https://codeclimate.com/github/troter/pdflib_mini/badges/gpa.svg)](https://codeclimate.com/github/troter/pdflib_mini)
+
 PdflibMini is a mini wrapper for PDFlib. this provides useful methods and some extension point.
 
 ## Installation
