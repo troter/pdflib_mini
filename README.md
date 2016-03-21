@@ -52,7 +52,7 @@ p.open_pdi_document(infile, '').class         # => PdflibMini::Pdf::Document
 
 Handle object has reader methods there easy access to information for itself.
 
-```
+```ruby
 doc = p.open_pdi_document(infile, '')
 page = doc.open_pdi_page(1, '')
 page.pagewidth
@@ -71,7 +71,7 @@ font.featurelist
 
 Handle object has some method like `fit_xxx`, `info_xxx`, and `fit_xxxblock`.
 
-```
+```ruby
 doc = p.open_pdi_document(infile, '')
 page = doc.open_pdi_page(1, '')
 page.fit_pdi_page(0, 0, '') 
@@ -84,7 +84,7 @@ image.info_image('imagewidth', '')
 
 Handle object is not singleton. it can be easily extended.
 
-```
+```ruby
 image = p.load_image('auto', imagefile, '')
 
 module ImagePathname
