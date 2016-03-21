@@ -35,5 +35,24 @@ describe PdflibMini::Pdflib do
         end
       end
     end
+
+    describe '#with_open_pdi_document' do
+      it 'success' do
+        expect(pdflib).to receive(:open_pdi_document).with('input.pdf', 'optlist') { 1 }
+        expect(pdflib).to receive(:close_pdi_document)
+
+        PdflibMini.new.with_open_pdi_document('input.pdf', 'optlist') do |doc|
+          expect(doc).to eq 1
+        end
+      end
+
+      it 'error' do
+        expect(pdflib).to receive(:open_pdi_document).with('input.pdf', 'optlist') { -1 }
+
+        PdflibMini.new.with_open_pdi_document('input.pdf', 'optlist') do |doc|
+          expect(doc).to eq -1
+        end
+      end
+    end
   end
 end
