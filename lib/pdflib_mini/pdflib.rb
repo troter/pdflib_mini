@@ -7,109 +7,109 @@ module PdflibMini
     # 3.4 Layers
     # int define_layer(string name, string optlist)
     def define_layer(*args)
-      Layer.create(super(*args), self)
+      Handle::Layer.create(super(*args), self)
     end
 
     # 4.1 Font Handling
     # int load_font(string fontname, string encoding, string optlist)
     def load_font(*args)
-      Font.create(super(*args), self)
+      Handle::Font.create(super(*args), self)
     end
 
     # 5.1 Single-Line Text with Textlines
     # pseudo
     def create_textline(text)
-      Textline.create(text, self)
+      Handle::Textline.create(text, self)
     end
 
     # 5.2 Multi-Line Text with Textflows
     # int add_textflow(int textflow, string text, string optlist)
     def add_textflow(*args)
-      Textflow.create(super(*args), self)
+      Handle::Textflow.create(super(*args), self)
     end
 
     # 5.2 Multi-Line Text with Textflows
     # int create_textflow(string text, string optlist)
     def create_textflow(*args)
-      Textflow.create(super(*args), self)
+      Handle::Textflow.create(super(*args), self)
     end
 
     # 5.3 Table Formatting
     # int add_table_cell(int table, int column, int row, string text, string optlist)
     def add_table_cell(*args)
-      TableCell.create(super(*args), self)
+      Handle::TableCell.create(super(*args), self)
     end
 
     # 7.6 Path Objects
     # int add_path_point(int path, float x, float y, string type, string optlist)
     def add_path_point(*args)
-      Path.create(super(*args), self)
+      Handle::Path.create(super(*args), self)
     end
 
     # 8.1 Setting Color
     # int makespotcolor(string spotname)
     def makespotcolor(*args)
-      Color.create(super(*args), self)
+      Handle::Color.create(super(*args), self)
     end
 
     # 8.2 ICC Profiles
     # int load_iccprofile(string profilename, string optlist)
     def load_iccprofile(*args)
-      Profile.create(super(*args), self)
+      Handle::Profile.create(super(*args), self)
     end
 
     # 8.3 Patterns and Shadings
     # int begin_pattern_ext(float width, float height, string optlist)
     def begin_pattern_ext(*args)
-      Pattern.create(super(*args), self)
+      Handle::Pattern.create(super(*args), self)
     end
 
     # 8.3 Patterns and Shadings
     # int shading_pattern(int shading, string optlist)
     def shading_pattern(*args)
-      Pattern.create(super(*args), self)
+      Handle::Pattern.create(super(*args), self)
     end
 
     # 8.3 Patterns and Shadings
     # int shading(string shtype, float x0, float y0, float x1, float y1, float c1, float c2, float c3, float c4, string optlist)
     def shading(*args)
-      Sharding.create(super(*args), self)
+      Handle::Sharding.create(super(*args), self)
     end
 
     # 9.1 Images
     # int load_image(string imagetype, string filename, string optlist)
     def load_image(*args)
-      Image.create(super(*args), self)
+      Handle::Image.create(super(*args), self)
     end
 
     # 9.2 SVG Graphics
     # int load_graphics(string type, string filename, string optlist)
     def load_graphics(*args)
-      Graphics.create(super(*args), self)
+      Handle::Graphics.create(super(*args), self)
     end
 
     # 9.3 Templates
     # int begin_template_ext(float width, float height, string optlist)
     def begin_template_ext(*args)
-      Template.create(super(*args), self)
+      Handle::Template.create(super(*args), self)
     end
 
     # 10.1 Document Functions
     # int open_pdi_document(string filename, string optlist)
     def open_pdi_document(*args)
-      Pdf::Document.create(super(*args), self)
+      Handle::Pdf::Document.create(super(*args), self)
     end
 
     # 10.2 Page Functions
     # int open_pdi_page(int doc, int pagenumber, string optlist)
     def open_pdi_page(*args)
-      Pdf::Page.create(super(*args), args.first, self)
+      Handle::Pdf::Page.create(super(*args), args.first, self)
     end
 
     # 12.1 Bookmarks
     # int create_bookmark(string text, string optlist)
     def create_bookmark(*args)
-      Bookmark.create(super(*args), self)
+      Handle::Bookmark.create(super(*args), self)
     end
 
     # 12.2 Annotations
@@ -124,7 +124,7 @@ module PdflibMini
     # 12.4 Actions
     # int create_action(string type, string optlist)
     def create_action(*args)
-      Action.create(super(*args), self)
+      Handle::Action.create(super(*args), self)
     end
 
     # 12.5 Named Destinations
@@ -133,36 +133,36 @@ module PdflibMini
     # 12.6 PDF Packages and Portfolios
     # int add_portfolio_folder(int parent, string foldername, string optlist)
     def add_portfolio_folder(*args)
-      Folder.create(super(*args), self)
+      Handle::Folder.create(super(*args), self)
     end
 
     # pseudo
     def root_portfolio_folder
-      Folder.new(-1, self)
+      Handle::Folder.new(-1, self)
     end
 
     # 13.1 3D Artwork
     # int load_3ddata(string filename, string optlist)
     def load_3ddata(*args)
-      Data3d.create(super(*args), self)
+      Handle::Data3d.create(super(*args), self)
     end
 
     # 13.1 3D Artwork
     # int create_3dview(string username, string optlist)
     def create_3dview(*args)
-      Data3dView.create(super(*args), self)
+      Handle::Data3dView.create(super(*args), self)
     end
 
     # 13.2 Asset and Rich Media Features (Flash)
     # int load_asset(string type, string filename, string optlist)
     def load_asset(*args)
-      Asset.create(super(*args), self)
+      Handle::Asset.create(super(*args), self)
     end
 
     # 14.3 Tagged PDF
     # int begin_item(string tagname, string optlist)
     def begin_item(*args)
-      Item.create(super(*args), self)
+      Handle::Item.create(super(*args), self)
     end
 
     # 14.4 Marked Content

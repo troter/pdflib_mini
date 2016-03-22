@@ -43,9 +43,9 @@ PdflibMini returns a handle object that wrapping PDFlib's handle in most cases.
 
 ```ruby
 p = PDFlilbMini.new
-p.load_font("Helvetica", "unicode", '').class # => PdflibMini::Font
-p.load_image('auto', imagefile, '').class     # => PdflibMini::Image
-p.open_pdi_document(infile, '').class         # => PdflibMini::Pdf::Document
+p.load_font("Helvetica", "unicode", '').class # => PdflibMini::Handle::Font
+p.load_image('auto', imagefile, '').class     # => PdflibMini::Handle::Image
+p.open_pdi_document(infile, '').class         # => PdflibMini::Handle::Pdf::Document
 ```
 
 ### Easy access to information for handle object
@@ -98,8 +98,10 @@ image.extend ImagePathname
 
 # or prepend module
 module PdflibMini
-  class Image
-    prepend ImagePathname
+  module Handle
+    class Image
+      prepend ImagePathname
+    end
   end
 end
 

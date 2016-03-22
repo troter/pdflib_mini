@@ -13,7 +13,7 @@ describe PdflibMini::Pdflib do
     p = PdflibMini.new
     image = p.load_image('auto', 'sample.png', '')
     expect(image).to eq 1
-    expect(image).to be_a(PdflibMini::Image)
+    expect(image).to be_a(PdflibMini::Handle::Image)
   end
 
   describe PdflibMini::Pdflib::UsingBlocks do
