@@ -2,9 +2,12 @@ module PdflibMini
   module Handle
     module Pdf
       class Document < Base
-        def initialize(doc, p)
+        attr_reader :filename
+
+        def initialize(doc, p, filename)
           super(doc)
           @p = p
+          @filename = filename
         end
 
         # 10.1 Document Functions

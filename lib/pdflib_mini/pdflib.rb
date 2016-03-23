@@ -97,7 +97,7 @@ module PdflibMini
     # 10.1 Document Functions
     # int open_pdi_document(string filename, string optlist)
     def open_pdi_document(*args)
-      Handle::Pdf::Document.create(super(*args), self)
+      Handle::Pdf::Document.create(super(*args), self, args.first)
     end
 
     # 10.2 Page Functions
