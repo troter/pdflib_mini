@@ -25,14 +25,14 @@ Or install it yourself as:
 
 ## Usage
 
-Require PDFlib and ths gem, and replace PDFlib by PDFlibMini.
+Require PDFlib and this gem, and replace PDFlib by PDFlibMini.
 
 ```ruby
 require './PDFlib'
 require 'pdflib_mini'
 
 # p = PDFlib.new
-p = PDFlilbMini.new 
+p = PDFlibMini.new
 ```
 
 PdflibMini does not break the interface of PDFlib.
@@ -53,18 +53,29 @@ p.open_pdi_document(infile, '').class         # => PdflibMini::Handle::Pdf::Docu
 Handle object has reader methods there easy access to information for itself.
 
 ```ruby
+# raw (float) values
 doc = p.open_pdi_document(infile, '')
 page = doc.open_pdi_page(1, '')
 page.pagewidth
 page.pageheight
 
+# string values
 image = p.load_image('auto', imagefile, '')
 image.filename
 image.imagetype
 
-font = p.load_font("Helvetica", "unicode", '')
+font = p.load_font('Helvetica', 'unicode', '')
 font.feature('name=liga')
 font.featurelist
+
+# handle object
+font.clippingpath            # PdflibMini::Handle::Path instance
+
+# conversion
+font.clippingpath(as: :path) # PdflibMini::Handle::Path instance
+font.clippingpath(as: :raw)  # float (PDFlib's handle)
+image.imagetype              # string
+image.imagetype(as: :raw)    # float (PDFlib's string index)
 ```
 
 ### Handle specific methods.
@@ -74,7 +85,7 @@ Handle object has some method like `fit_xxx`, `info_xxx`, and `fit_xxxblock`.
 ```ruby
 doc = p.open_pdi_document(infile, '')
 page = doc.open_pdi_page(1, '')
-page.fit_pdi_page(0, 0, '') 
+page.fit_pdi_page(0, 0, '')
 
 image = p.load_image('auto', imagefile, '')
 image.info_image('imagewidth', '')
@@ -110,7 +121,7 @@ image.filename.expand_path
 
 ## Using blocks for scope management
 
-PdflibMini provides `with_xxx` methods there manage scope. 
+PdflibMini provides `with_xxx` methods there manage scope.
 
 ```ruby
 p = PDFlilbMini.new
