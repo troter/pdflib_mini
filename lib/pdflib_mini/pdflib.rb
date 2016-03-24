@@ -73,7 +73,7 @@ module PdflibMini
     # 8.3 Patterns and Shadings
     # int shading(string shtype, float x0, float y0, float x1, float y1, float c1, float c2, float c3, float c4, string optlist)
     def shading(*args)
-      Handle::Sharding.create(super(*args), self)
+      Handle::Shading.create(super(*args), self)
     end
 
     # 9.1 Images

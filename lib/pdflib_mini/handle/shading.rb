@@ -1,6 +1,6 @@
 module PdflibMini
   module Handle
-    class Sharding < Base
+    class Shading < Base
       def initialize(sharding, p)
         super(sharding)
         @p = p
