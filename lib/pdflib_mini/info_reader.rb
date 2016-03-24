@@ -5,38 +5,40 @@ module PdflibMini
     end
 
     module ClassMethods
-      def info_raw_reader(method_name, keyword)
-        define_method(keyword) do |optlist = ''|
-          public_send(method_name, keyword, optlist)
+      def info_reader(method_name, keyword, default_type)
+        define_method(keyword) do |*args|
+          optlist = args.first.is_a?(String) ? args.first : ''
+          options = args.last.is_a?(Hash) ? args.last : {}
+          result = public_send(method_name, keyword, optlist)
+          type = options.fetch(:as, default_type)
+          case type
+          when :raw
+            info_result_as_raw(result)
+          when :string
+            info_result_as_string(result)
+          else # handle
+            info_result_as_handle(result, type)
+          end
         end
       end
+    end
 
-      def info_string_reader(method_name, keyword)
-        define_method(keyword) do |optlist = ''|
-          result = public_send(method_name, keyword, optlist).to_i
-          return nil if result == -1
-          @p.get_string(result, '')
-        end
-      end
+    private
 
-      def info_handle_reader(method_name, keyword, handle)
-        class_name = handle.to_s.capitalize
-        define_method(keyword) do |optlist = ''|
-          result = public_send(method_name, keyword, optlist).to_i
-          PdflibMini.const_get(class_name).create(result, @p)
-        end
-      end
+    def info_result_as_raw(result)
+      result
+    end
 
-      def info_reader(method_name, keyword, type)
-        case type
-        when :raw
-          info_raw_reader(method_name, keyword)
-        when :string
-          info_string_reader(method_name, keyword)
-        else
-          info_handle_reader(method_name, keyword, type)
-        end
-      end
+    def info_result_as_string(result)
+      result = result.to_i
+      return nil if result == -1
+      @p.get_string(result, '')
+    end
+
+    def info_result_as_handle(result, handle)
+      result = result.to_i
+      class_name = handle.to_s.capitalize
+      PdflibMini::Handle.const_get(class_name).create(result, @p)
     end
   end
 end
