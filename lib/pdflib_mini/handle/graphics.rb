@@ -31,6 +31,9 @@ module PdflibMini
 
       # 9.2 SVG Graphics
       # float info_graphics(int graphics, string keyword, string optlist)
+      def info_graphics(*args)
+        @p.info_graphics(self, *args)
+      end
     end
   end
 end

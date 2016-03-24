@@ -26,7 +26,7 @@ module PdflibMini
       # 5.3 Table Formatting
       # float info_table(int table, string keyword)
       def info_table(keyword, _)
-        @p.info_table(keyword)
+        @p.info_table(self, keyword)
       end
 
       # 5.3 Table Formatting

@@ -9,7 +9,7 @@ module PdflibMini
       # 9.3 Templates
       # end_template_ext(float width, float height)
       def end_template_ext(*args)
-        @p.end_template_ext(self, *args)
+        @p.end_template_ext(*args)
       end
     end
   end
