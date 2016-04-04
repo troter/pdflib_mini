@@ -207,13 +207,13 @@ describe PdflibMini::Pdflib do
     end
   end
 
-  describe PdflibMini::Pdflib::UsingBlocks do
-    describe '#with_begin_document' do
+  describe 'block methods' do
+    describe '#begin_document' do
       it 'success' do
         expect(pdflib).to receive(:begin_document).with('output.pdf', 'begin_optlist') { 1 }
         expect(pdflib).to receive(:end_document).with('end_optlist')
 
-        PdflibMini.new.with_begin_document('output.pdf', 'begin_optlist', 'end_optlist') do |result|
+        PdflibMini.new.begin_document('output.pdf', 'begin_optlist', 'end_optlist') do |result|
           expect(result).to eq 1
         end
       end
@@ -221,18 +221,18 @@ describe PdflibMini::Pdflib do
       it 'error' do
         expect(pdflib).to receive(:begin_document).with('output.pdf', 'begin_optlist') { -1 }
 
-        PdflibMini.new.with_begin_document('output.pdf', 'begin_optlist', 'end_optlist') do |result|
+        PdflibMini.new.begin_document('output.pdf', 'begin_optlist', 'end_optlist') do |result|
           expect(result).to eq -1
         end
       end
     end
 
-    describe '#with_open_pdi_document' do
+    describe '#open_pdi_document' do
       it 'success' do
         expect(pdflib).to receive(:open_pdi_document).with('input.pdf', 'optlist') { 1 }
         expect(pdflib).to receive(:close_pdi_document)
 
-        PdflibMini.new.with_open_pdi_document('input.pdf', 'optlist') do |doc|
+        PdflibMini.new.open_pdi_document('input.pdf', 'optlist') do |doc|
           expect(doc).to eq 1
         end
       end
@@ -240,7 +240,7 @@ describe PdflibMini::Pdflib do
       it 'error' do
         expect(pdflib).to receive(:open_pdi_document).with('input.pdf', 'optlist') { -1 }
 
-        PdflibMini.new.with_open_pdi_document('input.pdf', 'optlist') do |doc|
+        PdflibMini.new.open_pdi_document('input.pdf', 'optlist') do |doc|
           expect(doc).to eq -1
         end
       end
