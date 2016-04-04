@@ -29,7 +29,7 @@ module PdflibMini
       # 5.2 Multi-Line Text with Textflows
       # float info_textflow(int textflow, string keyword)
       def info_textflow(keyword, _)
-        @p.info_textflow(keyword)
+        @p.info_textflow(self, keyword)
       end
 
       # 5.2 Multi-Line Text with Textflow
