@@ -40,6 +40,12 @@ module PdflibMini
       Handle::TableCell.create(super(*args), self)
     end
 
+    # 7.2 Graphics State
+    # int create_gstate(string optlist)
+    def create_gstate(*args)
+      Handle::GraphicsState.create(super(*args), self)
+    end
+
     # 7.6 Path Objects
     # int add_path_point(int path, float x, float y, string type, string optlist)
     def add_path_point(*args)
