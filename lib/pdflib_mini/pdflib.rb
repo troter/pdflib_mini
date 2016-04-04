@@ -239,9 +239,9 @@ module PdflibMini
       # int add_table_cell(int table, int column, int row, string text, string optlist)
       # delete_table(int table, string optlist)
       def with_add_table_cell(table, column, row, text, add_optlist, delete_optlist = '', &block)
-        table = create_textflow(table, column, row, text, add_optlist)
+        table = create_table_cell(table, column, row, text, add_optlist)
         block.call(table, self)
-        textflow.delete_textflow(delete_optlist) if table != -1
+        table.delete_table(delete_optlist) if table != -1
       end
 
       # 7.6 Path Objects
