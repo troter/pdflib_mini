@@ -121,17 +121,17 @@ image.filename.expand_path
 
 ## Using blocks for scope management
 
-PdflibMini provides `with_xxx` methods there manage scope.
+Passing blocks to begin_xxx, open_xxx, and some other methods.
 
 ```ruby
 p = PDFlilbMini.new
-p.with_begin_document(outfile, '') do |result|
+p.begin_document(outfile, '') do |result|
   fail if result == -1
-  p.with_open_pdi_document(infile, '') do |indoc|
+  p.open_pdi_document(infile, '') do |indoc|
     fail if indoc == -1
-    indoc.with_open_pdi_page(1, '') do |inpage|
+    indoc.open_pdi_page(1, '') do |inpage|
       fail if (inpage == -1)
-      p.with_begin_page_ext(10, 10, '') do
+      p.begin_page_ext(10, 10, '') do
         inpage.fit_pdi_page(0, 0, '')
       end
     end
