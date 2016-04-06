@@ -9,8 +9,8 @@ module PdflibMini
       # 3.4 Layers
       # begin_layer(int layer)
       # end_layer( )
-      def with_begin_layer(&block)
-        @p.with_begin_layer(self, &block)
+      def begin_layer(&block)
+        @p.begin_layer(self, &block)
       end
     end
   end

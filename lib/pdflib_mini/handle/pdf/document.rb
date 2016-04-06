@@ -18,15 +18,8 @@ module PdflibMini
 
         # 10.2 Page Functions
         # int open_pdi_page(int doc, int pagenumber, string optlist)
-        def open_pdi_page(*args)
-          @p.open_pdi_page(self, *args)
-        end
-
-        # 10.2 Page Functions
-        # int open_pdi_page(int doc, int pagenumber, string optlist)
-        # close_pdi_page(int page)
-        def with_open_pdi_page(pagenumber, optlist, &block)
-          @p.with_open_pdi_page(self, pagenumber, optlist, &block)
+        def open_pdi_page(*args, &block)
+          @p.open_pdi_page(self, *args, &block)
         end
 
         # 10.3 Other PDI Processing

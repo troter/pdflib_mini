@@ -37,13 +37,6 @@ module PdflibMini
       def stringwidth(text, fontsize)
         @p.stringwidth(text, self, fontsize)
       end
-
-      # 4.1 Font Handling
-      # int load_font(string fontname, string encoding, string optlist)
-      # close_font(int font)
-      def with_load_font(*args, &block)
-        @p.with_load_font(*args, &block)
-      end
     end
   end
 end
