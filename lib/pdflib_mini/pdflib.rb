@@ -142,6 +142,97 @@ module PdflibMini
       end
     end
 
+    # 7.3 Coordinate System Transformations
+    # translate(float tx, float ty)
+    def translate(*args, &block)
+      if block_given?
+        save do
+          super(*args)
+          block.call
+        end
+      else
+        super(*args)
+      end
+    end
+
+    # 7.3 Coordinate System Transformations
+    # scale(float sx, float sy)
+    def scale(*args, &block)
+      if block_given?
+        save do
+          super(*args)
+          block.call
+        end
+      else
+        super(*args)
+      end
+    end
+
+    # 7.3 Coordinate System Transformations
+    # rotate(float phi)
+    def rotate(*args, &block)
+      if block_given?
+        save do
+          super(*args)
+          block.call
+        end
+      else
+        super(*args)
+      end
+    end
+
+    # 7.3 Coordinate System Transformations
+    # align(float dx, float dy)
+    def align(*args, &block)
+      if block_given?
+        save do
+          super(*args)
+          block.call
+        end
+      else
+        super(*args)
+      end
+    end
+
+    # 7.3 Coordinate System Transformations
+    # skew(float alpha, float beta)
+    def skew(*args, &block)
+      if block_given?
+        save do
+          super(*args)
+          block.call
+        end
+      else
+        super(*args)
+      end
+    end
+
+    # 7.3 Coordinate System Transformations
+    # concat(float a, float b, float c, float d, float e, float f)
+    def concat(*args, &block)
+      if block_given?
+        save do
+          super(*args)
+          block.call
+        end
+      else
+        super(*args)
+      end
+    end
+
+    # 7.3 Coordinate System Transformations
+    # setmatrix(float a, float b, float c, float d, float e, float f)
+    def setmatrix(*args, &block)
+      if block_given?
+        save do
+          super(*args)
+          block.call
+        end
+      else
+        super(*args)
+      end
+    end
+
     # 7.6 Path Objects
     # int add_path_point(int path, float x, float y, string type, string optlist)
     # delete_path(int path)
