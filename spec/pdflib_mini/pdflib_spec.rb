@@ -49,9 +49,9 @@ describe PdflibMini::Pdflib do
     end
 
     it '#add_table_cell' do
-      expect(pdflib).to receive(:add_table_cell).with(-1, 11, 22, '') { 1 }
+      expect(pdflib).to receive(:add_table_cell).with(-1, 11, 22, '', '') { 1 }
 
-      handle = p.add_table_cell(-1, 11, 22, '')
+      handle = p.add_table_cell(-1, 11, 22, '', '')
       expect(handle).to eq 1
       expect(handle).to be_a(PdflibMini::Handle::TableCell)
     end
