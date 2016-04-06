@@ -315,7 +315,7 @@ module PdflibMini
     # int open_pdi_page(int doc, int pagenumber, string optlist)
     # close_pdi_page(int page)
     def open_pdi_page(*args, &block)
-      Handle::Pdf::Page.create(super(*args), args.first, self).tap do
+      Handle::Pdf::Page.create(super(*args), args.first, self).tap do |page|
         if block_given?
           block.call(page, args.first, self)
           page.close_pdi_page if page != -1
