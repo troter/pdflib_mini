@@ -147,7 +147,7 @@ module PdflibMini
     ]
 
     # 6.1 Object Fitting
-    # Table6.3 Common keywords for querying the results of object fitting with
+    # Table 6.3 Common keywords for querying the results of object fitting with
     # PDF_info_image(),
     # PDF_info_graphics(),
     # PDF_ info_path( ),
