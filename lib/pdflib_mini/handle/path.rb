@@ -18,6 +18,12 @@ module PdflibMini
       end
 
       # 7.6 Path Objects
+      # int add_path_point(int path, float x, float y, string type, string optlist)
+      def add_path_point(*args)
+        @p.add_path_point(self, *args)
+      end
+
+      # 7.6 Path Objects
       # draw_path(int path, float x, float y, string optlist)
       def draw_path(*args)
         @p.draw_path(self, *args)
