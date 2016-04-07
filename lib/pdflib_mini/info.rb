@@ -69,7 +69,8 @@ module PdflibMini
       ['endx', :raw],
       ['endy', :raw],
       ['pathlength', :raw],
-      ['perpendiculardir', :raw], # TODO vector
+      ['perpendiculardirx', :raw],
+      ['perpendiculardiry', :raw],
       ['replacedchars', :raw],
       ['righttoleft', :raw],
       ['scalex', :raw], # Deprecated, use fitscalex
