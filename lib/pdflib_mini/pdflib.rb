@@ -233,6 +233,48 @@ module PdflibMini
       end
     end
 
+    # 7.5 Painting and Clipping
+    # stroke( )
+    def stroke(&block)
+      block.call if block_given?
+      super
+    end
+
+    # 7.5 Painting and Clipping
+    # closepath_stroke( )
+    def closepath_stroke(&block)
+      block.call if block_given?
+      super
+    end
+
+    # 7.5 Painting and Clipping
+    # fill( )
+    def fill(&block)
+      block.call if block_given?
+      super
+    end
+
+    # 7.5 Painting and Clipping
+    # fill_stroke( )
+    def fill_stroke(&block)
+      block.call if block_given?
+      super
+    end
+
+    # 7.5 Painting and Clipping
+    # closepath_fill_stroke( )
+    def closepath_fill_stroke(&block)
+      block.call if block_given?
+      super
+    end
+
+    # 7.5 Painting and Clipping
+    # clip( )
+    def clip(&block)
+      block.call if block_given?
+      super
+    end
+
     # 7.6 Path Objects
     # int add_path_point(int path, float x, float y, string type, string optlist)
     # delete_path(int path)
