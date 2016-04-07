@@ -14,11 +14,17 @@ module PdflibMini
           case type
           when :raw
             info_result_as_raw(result)
+          when :boolean
+            info_result_as_boolean(result)
           when :string
             info_result_as_string(result)
           else # handle
             info_result_as_handle(result, type)
           end
+        end
+
+        if default_type == :boolean
+          alias_method :"#{keyword}?", keyword
         end
       end
     end
@@ -27,6 +33,10 @@ module PdflibMini
 
     def info_result_as_raw(result)
       result
+    end
+
+    def info_result_as_boolean(result)
+      result.to_i == 1
     end
 
     def info_result_as_string(result)

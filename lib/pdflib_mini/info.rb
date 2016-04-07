@@ -6,11 +6,11 @@ module PdflibMini
       ['ascender', :raw],
       ['capheight', :raw],
       ['cid', :raw],
-      ['cidfont', :raw], # TODO boolean
+      ['cidfont', :boolean],
       ['code', :raw],
       ['codepage', :raw], # TODO three-valued logic
       ['codepagelist', :raw],
-      ['checkcolorspace', :raw], # TODO boolean
+      ['checkcolorspace', :boolean],
       ['descender', :raw],
       ['encoding', :string],
       ['fallbackfont', :font],
@@ -23,7 +23,7 @@ module PdflibMini
       ['fonttype', :string],
       ['glyphid', :raw],
       ['glyphname', :string],
-      ['hostfont', :raw], # TODO boolean
+      ['hostfont', :boolean],
       ['italicangle', :raw],
       ['keepnative', :raw],
       ['kerningpairs', :raw],
@@ -43,19 +43,19 @@ module PdflibMini
       ['replacementchar', :raw],
       ['selector', :raw],
       ['selectorlist', :string],
-      ['shapingsupport', :raw], # TODO boolean
-      ['singfont', :raw], # TODO boolean
-      ['standardfont', :raw], # TODO boolean
+      ['shapingsupport', :boolean],
+      ['singfont', :boolean],
+      ['standardfont', :boolean],
       ['supplement', :raw],
-      ['symbolfont', :raw], # TODO boolean
+      ['symbolfont', :boolean],
       ['unicode', :raw],
       ['unicodefont', :raw],
       ['unmappedglyphs', :raw],
-      ['usedglyph', :raw], # TODO boolean
+      ['usedglyph', :boolean],
       ['vertical', :raw],
       ['weight', :raw],
-      ['willembed', :raw], # TODO boolean
-      ['willsubset', :raw], # TODO boolean
+      ['willembed', :boolean],
+      ['willsubset', :boolean],
       ['xheight', :raw],
     ]
 
@@ -82,7 +82,7 @@ module PdflibMini
       ['textheight', :raw],
       ['unknownchars', :raw],
       ['unmappedchars', :raw],
-      ['wellformed', :raw], # TODO boolean
+      ['wellformed', :boolean],
       ['writingdirx', :raw],
       ['writingdiry', :raw],
       ['xheight', :raw],
@@ -112,7 +112,7 @@ module PdflibMini
       ['returnreason', :string],
       ['rightlinex', :raw],
       ['rightliney', :raw],
-      ['split', :raw], # TODO boolean
+      ['split', :boolean],
       ['textendx', :raw],
       ['textendy', :raw],
       ['textheight', :raw],
@@ -137,7 +137,7 @@ module PdflibMini
       ['lastbodyrow', :raw],
       ['returnreason', :string],
       ['rowcount', :raw],
-      ['rowsplit', :raw], # TODO boolean
+      ['rowsplit', :boolean],
       ['tableheight', :raw],
       ['tablewidth', :raw],
       ['vertboxgap', :raw],
@@ -186,21 +186,21 @@ module PdflibMini
     # Table 9.4 Keywords for PDF_info_image()
     INFO_KEYWORD_TABLE_9_4 = [
       ['clippingpath', :path],
-      ['checkcolorspace', :raw], # TODO boolean
+      ['checkcolorspace', :boolean],
       ['filename', :string],
       ['iccprofile', :profile],
       ['imageheight', :raw],
       ['imagemask', :image],
       ['imagetype', :string],
       ['imagewidth', :raw],
-      ['infomode', :raw], # TODO boolean
+      ['infomode', :boolean],
       ['mirroringx', :raw],
       ['mirroringy', :raw],
       ['orientation', :raw],
       ['resx', :raw],
       ['resy', :raw],
       ['strips', :raw],
-      ['transparent', :raw], # TODO boolean
+      ['transparent', :boolean],
       ['xid', :string],
     ]
 
@@ -209,10 +209,10 @@ module PdflibMini
     INFO_KEYWORD_TABLE_9_8 = [
       ['description', :string],
       ['filename', :string],
-      ['fittingpossible', :raw], # TODO boolean
+      ['fittingpossible', :boolean],
       ['graphicswidth', :raw],
       ['graphicsheight', :raw],
-      ['istemplate', :raw], # TODO boolean
+      ['istemplate', :boolean],
       ['metadata', :string],
       ['title', :string],
       ['type', :string],
@@ -222,7 +222,7 @@ module PdflibMini
     # 10.2 Page Functions
     # Table 10.4 Keywords for PDF_info_pdi_page()
     INFO_KEYWORD_TABLE_10_4 = [
-      ['fittingpossible', :raw], # TODO boolean
+      ['fittingpossible', :boolean],
       ['lang', :string],
       ['mirroringx', :raw],
       ['mirroringy', :raw],
