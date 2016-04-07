@@ -71,6 +71,10 @@ font.featurelist
 # handle object
 font.clippingpath            # PdflibMini::Handle::Path instance
 
+# boolean
+font.hostfont
+font.symbolfont?             # more ruby-ish
+
 # conversion
 font.clippingpath(as: :path) # PdflibMini::Handle::Path instance
 font.clippingpath(as: :raw)  # float (PDFlib's handle)
