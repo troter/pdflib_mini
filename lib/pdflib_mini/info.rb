@@ -180,6 +180,7 @@ module PdflibMini
       ['numpoints', :raw],
       ['px', :raw],
       ['py', :raw],
+      ['type', :raw],
     ]
 
     # 9.1 Images
